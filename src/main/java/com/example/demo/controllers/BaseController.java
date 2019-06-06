@@ -19,15 +19,16 @@ import java.net.URISyntaxException;
 
 @CrossOrigin
 @Controller
+@RequestMapping
 public class BaseController {
 
     @Autowired
     private GoogleUtils googleUtils;
 
-    @RequestMapping(value = { "/", "/login" })
-    public String login() {
-        return "login";
-    }
+//    @RequestMapping(value = { "/", "/login" })
+//    public String login() {
+//        return "login";
+//    }
 
     @RequestMapping("/login-google")
     public RedirectView loginGoogle(HttpServletRequest request) throws ClientProtocolException, URISyntaxException, IOException {
@@ -61,18 +62,18 @@ public class BaseController {
         return redirectView;
     }
 
-    @RequestMapping("/user")
-    public String user() {
-        return "user";
-    }
-
-    @RequestMapping("/admin")
-    public String admin() {
-        return "admin";
-    }
-
-    @RequestMapping("/403")
-    public String accessDenied() {
-        return "403";
-    }
+//    @RequestMapping("/user")
+//    public String user() {
+//        return "user";
+//    }
+//
+//    @RequestMapping("/admin")
+//    public String admin() {
+//        return "admin";
+//    }
+//
+//    @RequestMapping("/403")
+//    public String accessDenied() {
+//        return "403";
+//    }
 }

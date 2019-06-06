@@ -25,14 +25,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 withUser("hoang").password("$2a$04$Q2Cq0k57zf2Vs/n3JXwzmerql9RzElr.J7aQd3/Sq0fw/BdDFPAj.").roles("ADMIN");
         auth.inMemoryAuthentication().passwordEncoder(passwordEncoder()).
                 withUser("cao").password("$2a$04$Q2Cq0k57zf2Vs/n3JXwzmerql9RzElr.J7aQd3/Sq0fw/BdDFPAj.").roles("USER");
-   }
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests().antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')");
-        http.authorizeRequests().antMatchers("/user/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')");
-        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
+        http.csrf().disable().authorizeRequests().anyRequest().permitAll();
+//        http.authorizeRequests().antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')");
+//        http.authorizeRequests().antMatchers("/user/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')");
+//        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
 
         http.authorizeRequests().and().formLogin()
                 .loginProcessingUrl("/j_spring_security_login")

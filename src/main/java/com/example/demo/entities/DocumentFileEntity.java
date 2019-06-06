@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity(name = "DocumentFile")
-@Table(name = "DocumentFile")
+@Table(name = "document_file")
 public class DocumentFileEntity {
 
     @Id
@@ -15,7 +15,11 @@ public class DocumentFileEntity {
     private Integer id;
 
     @Basic
-    @Column(name = "fileUrl", length = 255)
-    private String fileUrl;
+    @Column(name = "image_name", length = 50)
+    private String image_name;
+
+    @Basic
+    @Column(name = "file_url", length = 255)
+    private String file_url;
 
 }

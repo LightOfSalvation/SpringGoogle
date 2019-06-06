@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@RestController
 @CrossOrigin
-@RequestMapping("/documentFile")
+@RestController
+@RequestMapping("/documentFiles")
 public class DocumentFileController {
 
-    private DocumentFileService documentFileService;
+    private final DocumentFileService documentFileService;
 
     @Autowired
     public DocumentFileController(DocumentFileService documentFileService) {
@@ -42,8 +42,8 @@ public class DocumentFileController {
         return saveDocumentFile(id, documentFileEntity);
     }
 
-    private DocumentFileEntity saveDocumentFile(Integer id, DocumentFileEntity userEntity){
-        return documentFileService.saveUser(id, userEntity);
+    private DocumentFileEntity saveDocumentFile(Integer id, DocumentFileEntity documentFileEntity){
+        return documentFileService.saveDocumentFile(id, documentFileEntity);
     }
 
     @DeleteMapping("/{id}")

@@ -30,7 +30,7 @@ public class DocumentFileServiceImpl implements DocumentFileService {
     }
 
     @Override
-    public DocumentFileEntity saveUser(Integer id, DocumentFileEntity documentFileEntity) {
+    public DocumentFileEntity saveDocumentFile(Integer id, DocumentFileEntity documentFileEntity) {
         return documentFileRepository.save(documentFileEntity);
     }
 

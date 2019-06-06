@@ -11,7 +11,7 @@ public interface DocumentFileService {
 
     DocumentFileEntity findById(Integer id);
 
-    DocumentFileEntity saveUser(Integer id, DocumentFileEntity documentFileEntity);
+    DocumentFileEntity saveDocumentFile(Integer id, DocumentFileEntity documentFileEntity);
 
     void deleteDocumentFile(Integer id);
 
